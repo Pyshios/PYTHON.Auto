@@ -1,7 +1,6 @@
 '''Simple script to download photos in instagram using selenium and wget  '''
 
 
-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
@@ -17,7 +16,7 @@ import wget
 
 
 # create a new Firefox session
-driver = webdriver.Firefox(executable_path = r'C:\Users\rapha\anaconda3\envs\Aulas\Lib\site-packages\selenium\webdriver\firefox\geckodriver.exe' ,log_path = None)
+driver = webdriver.Firefox(executable_path = r'C:\\Users\\T3\\Desktop\\geko\\geckodriver.exe',log_path = None)
 driver.implicitly_wait(30)
 driver.maximize_window()
 
@@ -32,17 +31,17 @@ driver.implicitly_wait(5)
 
 # connec trought facebook
 
-
-
+aeml = input("Email:")
+apsw = input("Password:")
 
 sfc =  driver.find_element_by_id('email')
 sfc.click()
-sfc.send_keys('') # Your email here <------------------------------------------------
+sfc.send_keys(aeml) # Your email here <------------------------------------------------
 driver.implicitly_wait(2)
 
 sfw = driver.find_element_by_id('pass')
 sfw.click()
-sfw.send_keys('') # your password here <----------------------------------------------------------
+sfw.send_keys(apsw) # your password here <----------------------------------------------------------
 
 driver.find_element_by_id("loginbutton").click()
 driver.implicitly_wait(5)
@@ -82,5 +81,4 @@ for i in slist:           # download images
    local_image_filename = wget.download(i)
 
 print("Every photo was all ready download")
-
 
