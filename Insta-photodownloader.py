@@ -16,7 +16,7 @@ import wget
 
 
 # create a new Firefox session
-driver = webdriver.Firefox(executable_path = r'C:\\Users\\T3\\Desktop\\geko\\geckodriver.exe',log_path = None)
+driver = webdriver.Firefox(executable_path ='',log_path = None)
 driver.implicitly_wait(30)
 driver.maximize_window()
 
